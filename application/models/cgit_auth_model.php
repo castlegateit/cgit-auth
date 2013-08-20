@@ -78,7 +78,7 @@ class Cgit_auth_model extends CI_Model
             'password'         => $this->phpass->HashPassword($password),
             'first_name'       => $first_name,
             'last_name'        => $last_name,
-            'activation_token' => sha1('CGITauth' . microtime()),
+            'token'            => sha1('CGITauth' . microtime()),
             'active'           => 0,
             'date_created'     => date('Y-m-d H:i:s')
         ));
@@ -151,7 +151,7 @@ class Cgit_auth_model extends CI_Model
     {
         $query = $this->db->select('*')
             ->from('users')
-            ->where(array('activation_token' => $activation_token, 'active' => 0))
+            ->where(array('token' => $activation_token, 'active' => 0))
             ->get();
 
         if ($query->num_rows() == 1)
@@ -175,7 +175,7 @@ class Cgit_auth_model extends CI_Model
      */  
     public function activate($activation_token)
     {
-        $query = $this->db->where('activation_token', $activation_token)
+        $query = $this->db->where('token', $activation_token)
             ->update('users', array(
                 'date_last_action' => date('Y-m-d H:i:s'),
                 'active'           => 1
