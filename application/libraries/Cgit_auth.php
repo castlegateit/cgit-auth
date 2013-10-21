@@ -103,8 +103,7 @@ class Cgit_auth
                         }
                         
                         // Return the user type ID
-                        $user_type_id = $this->user_model->get_first_type($user->id);
-                        return (int)$user_type_id->id;
+                        return (int)$user->id;
 
                     }
 
