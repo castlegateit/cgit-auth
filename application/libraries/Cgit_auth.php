@@ -102,7 +102,7 @@ class Cgit_auth
                             $this->cgit_auth_model->set_remember_cookie($user->id);
                         }
                         
-                        // Return the user type ID
+                        // Return the user ID
                         return (int)$user->id;
 
                     }
