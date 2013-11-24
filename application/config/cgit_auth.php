@@ -25,7 +25,7 @@ $config['session_namespace'] = '__cgit_auth';
  *
  * The name of the cookie used to store persistent login information.
  */
-$config['persistent_cookie_name'] = 'viamia_p';
+$config['persistent_cookie_name'] = 'cgit_auth_p';
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
