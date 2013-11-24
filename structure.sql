@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `token`, `active`, `suspended`, `date_forgotten_password`, `date_created`, `date_last_action`, `date_last_login`) VALUES
-    (1, 'test@domain.com', '$2a$12$A.gUXr4F0MYGFcEGG98.Q.m1lqo0PwSPPVKOYQi/Pmgm85YF74fGe', 'Test', 'User', 'c5d1ab4a95a1099deeec5f6e5998e326a93929d4', 1, 0, '2013-07-05 13:55:12', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+    (1, 'user@domain.com', '$2a$12$A.gUXr4F0MYGFcEGG98.Q.m1lqo0PwSPPVKOYQi/Pmgm85YF74fGe', 'Test', 'User', 'c5d1ab4a95a1099deeec5f6e5998e326a93929d4', 1, 0, '2013-07-05 13:55:12', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
     
 CREATE TABLE `persistent_logins` (
     `user_id` INT(10) NOT NULL,
