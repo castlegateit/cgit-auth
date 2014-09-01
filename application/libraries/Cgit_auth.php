@@ -88,6 +88,9 @@ class Cgit_auth
             // Is the account valid?
             if ($user = $this->cgit_auth_model->login($username, $password))
             {
+                // Delete previous remember me cookies
+                $this->cgit_auth_model->remove_remember_cookie();
+
                 // Is the account activated?
                 if ($user->active == 1)
                 {
@@ -101,7 +104,7 @@ class Cgit_auth
                         {
                             $this->cgit_auth_model->set_remember_cookie($user->id);
                         }
-                        
+
                         // Return the user ID
                         return (int)$user->id;
 
