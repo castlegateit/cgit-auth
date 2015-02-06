@@ -290,8 +290,6 @@ class Cgit_auth_model extends CI_Model
             return TRUE;
         }
 
-        // Cookie is invalid - remove it
-        //$this->remove_remember_cookie();
         return FALSE;
         
     }
